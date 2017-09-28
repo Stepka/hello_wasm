@@ -25,7 +25,7 @@ int main(void)
 	}
 
 	cout<<"Elements  in array are!"<<endl;
-	for(int i: ourArray)  cout<<n<<endl;
+	for(int i: ourArray)  cout<<i<<endl;
 	#endif
 	return 0;
 }
