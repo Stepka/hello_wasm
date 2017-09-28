@@ -1,5 +1,4 @@
 #include <iostream>
-#include <emscripten/emscripten.h>
 
 using namespace std;
 
@@ -34,7 +33,7 @@ int main(void)
 extern "C" {
 #endif
 
-void EMSCRIPTEN_KEEPALIVE callStepa(int argc, char ** argv) {
+void callStepa(int argc, char ** argv) {
   printf("Stepa Called\n");
 }
 
