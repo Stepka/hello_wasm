@@ -1,18 +1,21 @@
 #include <iostream>
+#include <emscripten/emscripten.h>
 
 using namespace std;
 
 int main(void)
 {
+	bool cpp11 = false;
 	#if __cplusplus==201402L
 	std::cout << "C++14" << std::endl;
 	#elif __cplusplus==201103L
 	std::cout << "C++11" << std::endl;
+	cpp11 = true;
 	#else
 	std::cout << "C++" << std::endl;
 	#endif
 		
-	/*	
+	#if __cplusplus==201103L
 	int ourArray[5];
 
 	for(int& i: ourArray)
@@ -23,6 +26,18 @@ int main(void)
 
 	cout<<”Elements  in array are!”<<endl;
 	for(int i: ourArray)  cout<<n<<endl;
-	*/
+	#endif
 	return 0;
 }
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+void EMSCRIPTEN_KEEPALIVE callStepa(int argc, char ** argv) {
+  printf("Stepa Called\n");
+}
+
+#ifdef __cplusplus
+}
+#endif
