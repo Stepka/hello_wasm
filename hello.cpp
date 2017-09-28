@@ -20,11 +20,11 @@ int main(void)
 
 	for(int& i: ourArray)
 	{
-		cout<<”Next element is->”;
+		cout<< "Next element is->";
 		cin>>i;
 	}
 
-	cout<<”Elements  in array are!”<<endl;
+	cout<<"Elements  in array are!"<<endl;
 	for(int i: ourArray)  cout<<n<<endl;
 	#endif
 	return 0;
